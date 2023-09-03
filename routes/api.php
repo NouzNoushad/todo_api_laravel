@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\TodoController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,4 +23,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('todo/{id?}', [TodoController::class, 'getTodoList']);
 Route::post('add', [TodoController::class, 'addOrUpdateTodo']);
 Route::post('delete', [TodoController::class, 'deleteTodo']);
+
+Route::post('register', [UserController::class , 'registerUser']);
+Route::post('login', [UserController::class , 'loginUser']);
+Route::post('logout', [UserController::class , 'logoutUser']);
 
