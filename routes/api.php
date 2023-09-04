@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\TodoController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -27,4 +28,6 @@ Route::post('delete', [TodoController::class, 'deleteTodo']);
 Route::post('register', [UserController::class , 'registerUser']);
 Route::post('login', [UserController::class , 'loginUser']);
 Route::post('logout', [UserController::class , 'logoutUser']);
+
+Route::post('upload', [ImageController::class , 'uploadImage']);
 
